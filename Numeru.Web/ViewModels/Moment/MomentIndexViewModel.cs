@@ -16,5 +16,7 @@ namespace Numeru.Web
         public bool KarmicNumber { get; set; }
 
         public IEnumerable<string> Calculation { get; set; }
+
+        public IEnumerable<string> CalculationRemark { get; set; }
     }
 }

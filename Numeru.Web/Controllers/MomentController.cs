@@ -25,6 +25,12 @@ namespace Numeru.Web.Controllers
                     "1 + 0 + 4 + 6 + 1 + 8",
                     "=",
                     "32 → 3 + 2 = 5"
+                },
+                CalculationRemark = new List<string>()
+                {
+                    "Дата",
+                    "+",
+                    "Время"
                 }
             };
 
