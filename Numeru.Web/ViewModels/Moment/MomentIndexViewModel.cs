@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Numeru.Web
 {
@@ -13,5 +14,7 @@ namespace Numeru.Web
         public bool DominantNumber { get; set; }
 
         public bool KarmicNumber { get; set; }
+
+        public IEnumerable<string> Calculation { get; set; }
     }
 }

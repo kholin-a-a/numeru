@@ -1,6 +1,6 @@
 ﻿@model MomentIndexViewModel;
 
-@{ 
+@{
     ViewData["Title"] = "Момент";
 }
 
@@ -68,6 +68,17 @@
         }
         <div>
             @Model.Prediction
+        </div>
+
+        <div>
+            <label>Рассчет</label>
+
+            <div>
+                @foreach (var line in Model.Calculation)
+                {
+                    <div>@line</div>
+                }
+            </div>
         </div>
     </div>
 </div>
