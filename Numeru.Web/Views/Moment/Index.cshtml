@@ -4,11 +4,11 @@
     ViewData["Title"] = "Момент";
 }
 
-<div class="block">
+<div class="block row">
     Нумерология момента Вашего нахождения здесь предскажет Ваше будущее.
 </div>
 
-<div class="row m-1">
+<div class="row mt-1">
     <div class="block col-5 text-center">
         <div class="display-1">@Model.Number</div>
         <div>Число момента</div>
@@ -45,7 +45,7 @@
     </div>
 </div>
 
-<div class="block">
+<div class="block row mt-1">
     @if (Model.DominantNumber)
     {
         <div>
