@@ -5,7 +5,7 @@
 }
 
 <div class="block">
-    Нумерология момента Вашего нахождения здесь предскажет Ваше будущее
+    Нумерология момента Вашего нахождения здесь предскажет Ваше будущее.
 </div>
 
 <div class="row m-1">
@@ -55,30 +55,32 @@
 
     @if (Model.KarmicNumber)
     {
-        <div>
+        <div class="mt-2">
             <strong>Кармическое число</strong>- благоприятный знак
         </div>
     }
 
-    <div>
+    <div class="mt-2">
         @Model.Prediction
     </div>
 
-    <div>
-        <label>Рассчет</label>
+    <div class="mt-2">
+        <strong>Рассчет</strong>
 
-        <div>
-            @foreach (var line in Model.Calculation)
-            {
-                <div>@line</div>
-            }
-        </div>
+        <div class="row">
+            <div class="col-10">
+                @foreach (var line in Model.Calculation)
+                {
+                    <div>@line</div>
+                }
+            </div>
 
-        <div>
-            @foreach (var line in Model.CalculationRemark)
-            {
-                <div>@line</div>
-            }
+            <div class="col-2 text-right text-secondary">
+                @foreach (var line in Model.CalculationRemark)
+                {
+                    <div>@line</div>
+                }
+            </div>
         </div>
     </div>
 </div>
