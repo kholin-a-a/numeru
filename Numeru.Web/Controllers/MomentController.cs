@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace Numeru.Web.Controllers
@@ -11,7 +12,8 @@ namespace Numeru.Web.Controllers
 
             var vm = new MomentIndexViewModel
             {
-                Number = 11
+                Number = 11,
+                Date = DateTime.Now
             };
 
             return View(vm);
