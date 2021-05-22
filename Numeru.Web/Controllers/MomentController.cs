@@ -9,7 +9,12 @@ namespace Numeru.Web.Controllers
         {
             await Task.Yield();
 
-            return View();
+            var vm = new MomentIndexViewModel
+            {
+                Number = 11
+            };
+
+            return View(vm);
         }
     }
 }

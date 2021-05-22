@@ -1,4 +1,4 @@
-﻿@model IndexViewModel;
+﻿@model MomentIndexViewModel;
 
 @{ 
     ViewData["Title"] = "Момент";
@@ -6,4 +6,16 @@
 
 <div>
     Нумерология момента Вашего нахождения здесь предскажет Ваше будущее
+</div>
+
+<div>
+    <div>
+        <div>
+            @Model.Number
+        </div>
+
+        <div>
+            Число момента
+        </div>
+    </div>
 </div>
