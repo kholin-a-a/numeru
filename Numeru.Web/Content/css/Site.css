@@ -1,0 +1,10 @@
+﻿body {
+    background: center no-repeat url("../img/nebulu_2400_2279.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.block {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
