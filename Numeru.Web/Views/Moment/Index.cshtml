@@ -9,25 +9,38 @@
 </div>
 
 <div class="row m-1">
-    <div class="block col-4 text-center">
+    <div class="block col-5 text-center">
         <div class="display-1">@Model.Number</div>
         <div>Число момента</div>
     </div>
 
-    <div class="block col-8">
-        <div>
-            <div>Дата</div>
-            <div>@Model.Date</div>
+    <div class="block col-7">
+        <div class="d-flex justify-content-around">
+            <div class="text-center">
+                <div>
+                    <strong>Дата</strong>
+                </div>
+
+                <div>@Model.Date</div>
+            </div>
+
+            <div class="text-center">
+                <div>
+                    <strong>Время</strong>
+                </div>
+
+                <div>@Model.Date</div>
+            </div>
         </div>
 
-        <div>
-            <div>Время</div>
-            <div>@Model.Date</div>
-        </div>
+        <div class="mt-5 text-center">
+            <button class="btn btn-outline-light btn-lg rounded-pill w-100">
+                Обновить
+            </button>
 
-        <div>
-            <button>Обновить</button>
-            <div>Обратитесь к вселенной с волнующим Вас вопросом</div>
+            <div>
+                <small>Обратитесь к вселенной с волнующим Вас вопросом</small>
+            </div>
         </div>
     </div>
 </div>
