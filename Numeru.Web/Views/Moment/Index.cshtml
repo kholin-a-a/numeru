@@ -50,6 +50,16 @@
     </div>
 
     <div>
-        @Model.Prediction
+        @{ 
+            if (Model.DominantNumber)
+            {
+                <div>
+                    <strong>Господствующее число</strong>- благоприятный знак
+                </div>
+            }
+        }
+        <div>
+            @Model.Prediction
+        </div>
     </div>
 </div>

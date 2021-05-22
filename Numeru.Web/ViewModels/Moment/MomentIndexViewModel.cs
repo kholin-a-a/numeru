@@ -9,5 +9,7 @@ namespace Numeru.Web
         public DateTime Date { get; set; }
 
         public string Prediction { get; set; }
+
+        public bool DominantNumber { get; set; }
     }
 }

@@ -14,7 +14,8 @@ namespace Numeru.Web.Controllers
             {
                 Number = 11,
                 Date = DateTime.Now,
-                Prediction = "Если проявите внимательность, то разглядите большую любовь совсем близко от себя."
+                Prediction = "Если проявите внимательность, то разглядите большую любовь совсем близко от себя.",
+                DominantNumber = true
             };
 
             return View(vm);
