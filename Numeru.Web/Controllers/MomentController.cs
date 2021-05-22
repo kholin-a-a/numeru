@@ -15,7 +15,8 @@ namespace Numeru.Web.Controllers
                 Number = 11,
                 Date = DateTime.Now,
                 Prediction = "Если проявите внимательность, то разглядите большую любовь совсем близко от себя.",
-                DominantNumber = true
+                DominantNumber = true,
+                KarmicNumber = true
             };
 
             return View(vm);

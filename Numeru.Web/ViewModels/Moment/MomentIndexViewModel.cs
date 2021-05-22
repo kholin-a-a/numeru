@@ -11,5 +11,7 @@ namespace Numeru.Web
         public string Prediction { get; set; }
 
         public bool DominantNumber { get; set; }
+
+        public bool KarmicNumber { get; set; }
     }
 }
