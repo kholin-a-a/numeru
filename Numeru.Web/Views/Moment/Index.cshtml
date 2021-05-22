@@ -8,13 +8,13 @@
     Нумерология момента Вашего нахождения здесь предскажет Ваше будущее
 </div>
 
-<div>
-    <div class="block">
+<div class="row m-1">
+    <div class="block col-4">
         <div>@Model.Number</div>
         <div>Число момента</div>
     </div>
 
-    <div class="block">
+    <div class="block col-8">
         <div>
             <div>Дата</div>
             <div>@Model.Date</div>
@@ -30,42 +30,42 @@
             <div>Обратитесь к вселенной с волнующим Вас вопросом</div>
         </div>
     </div>
+</div>
 
-    <div class="block">
-        @if (Model.DominantNumber)
-        {
-            <div>
-                <strong>Господствующее число</strong>- благоприятный знак
-            </div>
-        }
+<div class="block">
+    @if (Model.DominantNumber)
+    {
+        <div>
+            <strong>Господствующее число</strong>- благоприятный знак
+        </div>
+    }
 
-        @if (Model.KarmicNumber)
-        {
-            <div>
-                <strong>Кармическое число</strong>- благоприятный знак
-            </div>
-        }
+    @if (Model.KarmicNumber)
+    {
+        <div>
+            <strong>Кармическое число</strong>- благоприятный знак
+        </div>
+    }
+
+    <div>
+        @Model.Prediction
+    </div>
+
+    <div>
+        <label>Рассчет</label>
 
         <div>
-            @Model.Prediction
+            @foreach (var line in Model.Calculation)
+            {
+                <div>@line</div>
+            }
         </div>
 
         <div>
-            <label>Рассчет</label>
-
-            <div>
-                @foreach (var line in Model.Calculation)
-                {
-                    <div>@line</div>
-                }
-            </div>
-
-            <div>
-                @foreach (var line in Model.CalculationRemark)
-                {
-                    <div>@line</div>
-                }
-            </div>
+            @foreach (var line in Model.CalculationRemark)
+            {
+                <div>@line</div>
+            }
         </div>
     </div>
 </div>
