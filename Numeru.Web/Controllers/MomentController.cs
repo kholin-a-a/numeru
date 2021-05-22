@@ -13,7 +13,8 @@ namespace Numeru.Web.Controllers
             var vm = new MomentIndexViewModel
             {
                 Number = 11,
-                Date = DateTime.Now
+                Date = DateTime.Now,
+                Prediction = "Если проявите внимательность, то разглядите большую любовь совсем близко от себя."
             };
 
             return View(vm);
