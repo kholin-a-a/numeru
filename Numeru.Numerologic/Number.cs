@@ -13,6 +13,11 @@ namespace Numeru.Numerologic
             this._number = number;
         }
 
+        public Number(int num)
+        {
+            this._number = num.ToString();
+        }
+
         public void Evaluate()
         {
             while(!this.IsEvaluated())

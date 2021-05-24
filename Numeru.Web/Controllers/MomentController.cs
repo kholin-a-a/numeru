@@ -25,7 +25,7 @@ namespace Numeru.Web.Controllers
             var vm = new MomentIndexViewModel
             {
                 Number = number,
-                Description = "Кармическое число - благоприятный знак.",
+                Description = this._number.Describe(number),
                 Date = date,
                 Prediction = "Если проявите внимательность, то разглядите большую любовь совсем близко от себя.",
                 Calculation = new List<string>()
