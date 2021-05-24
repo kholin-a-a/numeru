@@ -78,20 +78,20 @@
         @Model.Prediction
     </div>
 
-    <div class="mt-4">
+    <div class="mt-2">
         <button class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#calculation-block" aria-expanded="false" aria-controls="calculation-block">
             Рассчет
         </button>
 
         <div class="row collapse mt-2" id="calculation-block">
-            <div class="col-10">
+            <div class="col-9">
                 @foreach (var line in Model.Calculation)
                 {
                     <div>@line</div>
                 }
             </div>
 
-            <div class="col-2 text-end text-secondary">
+            <div class="col-3 text-end text-secondary">
                 @foreach (var line in Model.CalculationRemark)
                 {
                     <div>@line</div>
