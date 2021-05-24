@@ -7,10 +7,12 @@ namespace Numeru.Numerologic
     public class Number
     {
         private string _number;
+        private readonly List<string> _trace;
 
         public Number(string number)
         {
             this._number = number;
+            this._trace = new List<string>();
         }
 
         public Number(int num)
@@ -20,11 +22,23 @@ namespace Numeru.Numerologic
 
         public void Evaluate()
         {
-            while(!this.IsEvaluated())
-            {
-                var sum = this._number
-                    .ToSequence()
-                    .Sum();
+            this._trace.Clear();
+            this._trace.Add(this._number);
+
+            while (!this.IsEvaluated())
+            {    
+                this._trace.Add("→");
+
+                var seq = this._number.ToSequence();
+                
+                this._trace.Add(
+                    string.Join(" + ", seq)
+                    );
+
+                var sum = seq.Sum();
+
+                this._trace.Add("=");
+                this._trace.Add(sum.ToString());
 
                 this._number = sum.ToString();
             }
@@ -72,6 +86,11 @@ namespace Numeru.Numerologic
                 throw new InvalidOperationException("Unable to cast non-evaluated numbers");
 
             return this._number.ToNumber();
+        }
+
+        public IEnumerable<string> Trace()
+        {
+            return this._trace;
         }
     }
 }

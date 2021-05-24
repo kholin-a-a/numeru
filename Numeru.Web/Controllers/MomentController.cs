@@ -32,14 +32,7 @@ namespace Numeru.Web.Controllers
                 Description = this._number.Describe(number),
                 Date = date,
                 Prediction = "Если проявите внимательность, то разглядите большую любовь совсем близко от себя.",
-                Calculation = new List<string>()
-                {
-                    "2 + 0 + 0 + 5 + 2 + 0 + 2 + 1 + 1",
-                    "+",
-                    "1 + 0 + 4 + 6 + 1 + 8",
-                    "=",
-                    "32 → 3 + 2 = 5"
-                },
+                Calculation = this._dateAlgorithm.Trace(date),
                 CalculationRemark = this._dateAlgorithm.Plan()
             };
 

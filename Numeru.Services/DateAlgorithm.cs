@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Numeru.Numerologic;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Numeru.Services
 {
@@ -8,10 +11,21 @@ namespace Numeru.Services
         {
             return new List<string>()
             {
-                "Дата",
-                "+",
-                "Время"
+                "Дата + Время"
             };
+        }
+
+        public IEnumerable<string> Trace(DateTime dateTime)
+        {
+            var number = new Number(
+                dateTime.ToString("ddMMyyyyhhmmss")
+                );
+
+            number.Evaluate();
+
+            return number
+                .Trace()
+                .Skip(2);
         }
     }
 }
