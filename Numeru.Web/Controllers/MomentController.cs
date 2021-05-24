@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Numeru.Services;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -7,15 +8,25 @@ namespace Numeru.Web.Controllers
 {
     public class MomentController: Controller
     {
+        private readonly IDigitService _digit;
+
+        public MomentController(IDigitService digit)
+        {
+            this._digit = digit;
+        }
+
         public async Task<ActionResult> Index()
         {
             await Task.Yield();
 
+            var date = DateTime.Now;
+            var number = this._digit.Digit(date);
+
             var vm = new MomentIndexViewModel
             {
-                Number = 7,
+                Number = number,
                 Description = "Кармическое число - благоприятный знак.",
-                Date = DateTime.Now,
+                Date = date,
                 Prediction = "Если проявите внимательность, то разглядите большую любовь совсем близко от себя.",
                 Calculation = new List<string>()
                 {
