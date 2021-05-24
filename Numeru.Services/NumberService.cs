@@ -20,5 +20,10 @@
                 this._kindDefinder.Define(num)
                 );
         }
+
+        public string Predict(int num)
+        {
+            return "Test";
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace Numeru.Web.Controllers
                 Number = number,
                 Description = this._number.Describe(number),
                 Date = date,
-                Prediction = "Если проявите внимательность, то разглядите большую любовь совсем близко от себя.",
+                Prediction = this._number.Predict(number),
                 Calculation = this._algorithm
                     .Trace(date)
                     .Skip(2),
