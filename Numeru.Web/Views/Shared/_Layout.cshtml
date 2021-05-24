@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="~/css/Site.css" asp-append-version="true" />
 
     <style>
+        .navbar__left,
+        .navbar__right {
+            width: 50px;
+        }
+
+        @@media all and (min-width:992px) {
+            .navbar__left,
+            .navbar__right {
+                width: 100px;
+            } 
+        }
+
         .logo img {
             width: 42px;
         }
@@ -54,15 +66,12 @@
 <body>
     <header>
         <nav class="navbar mb-3 transparent-dark d-flex align-items-center justify-content-between">
+            <div class="logo d-flex align-items-center ps-2 navbar__left">
+                <img src="~/img/logo_64_64.png" />
+                <div class="site-name d-none d-lg-block ms-2">Numeru</div>
+            </div>
 
-            @*<a class="navbar-brand ms-2 logo d-flex align-items-center justify-content-center" href="/">
-                    <img src="~/img/logo_64_64.png" />
-                    <div class="ms-2 site-name d-none d-lg-block">Numeru</div>
-                </a>*@
-
-            <div></div>
-
-            <ul class="nav">
+            <ul class="nav justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link active" href="/">Момент</a>
                 </li>
@@ -72,7 +81,7 @@
                 </li>
             </ul>
 
-            <div>
+            <div class="navbar__right">
                 <!-- empty -->
             </div>
         </nav>
