@@ -11,9 +11,9 @@ namespace Numeru.Services
                 case NumberKind.Base:
                     return "Базовое число";
                 case NumberKind.Dominant:
-                    return "Господствующее число - благоприятный знак";
+                    return "Господствующее число (благоприятный знак)";
                 case NumberKind.Karmic:
-                    return "Кармическое число - благоприятный знак";
+                    return "Кармическое число (благоприятный знак)";
                 default:
                     throw new Exception("Unexpected kind");
             }

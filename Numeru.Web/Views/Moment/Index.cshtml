@@ -20,6 +20,7 @@
             width: 250px;
         }
 
+    
     .reload__btn {
         max-width: 400px;
     }
@@ -45,7 +46,7 @@
                     <strong>Время</strong>
                 </div>
 
-                <div class="lead">@Model.Date.ToString("hh:mm:ss")</div>
+                <div class="lead">@Model.Date.ToString("HH:mm:ss")</div>
             </div>
         </div>
 
@@ -55,6 +56,10 @@
             </div>
 
             <img src="~/img/son.svg" />
+        </div>
+
+        <div class="mt-2 lead text-center">
+            @Model.Prediction
         </div>
 
         <div class="mt-4 text-center">
@@ -71,19 +76,11 @@
 
 <div class="block mt-1">
     <div class="mt-2">
-        @Model.Prediction
-    </div>
-    
-    <div class="mt-2">
-        @Model.Description
-    </div>
-
-    <div class="mt-2">
-        <button class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#calculation-block" aria-expanded="false" aria-controls="calculation-block">
+        <div class="text-secondary">
             Рассчет
-        </button>
+        </div>
 
-        <div class="row collapse mt-2" id="calculation-block">
+        <div class="row mt-2" id="calculation-block">
             <div class="col-9">
                 @foreach (var line in Model.Calculation)
                 {

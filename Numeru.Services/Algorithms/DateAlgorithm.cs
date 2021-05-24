@@ -11,7 +11,7 @@ namespace Numeru.Services
 
         protected override string ToNumber(DateTime value)
         {
-            return value.ToString("ddMMyyyyhhmmss");
+            return value.ToString("ddMMyyyyHHmmss");
         }
     }
 }
