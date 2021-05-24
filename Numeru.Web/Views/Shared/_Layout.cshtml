@@ -6,29 +6,78 @@
     <title>Numeru | @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap-5.0.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/Site.css" asp-append-version="true" />
+
+    <style>
+        .logo img {
+            width: 42px;
+        }
+
+        .logo .site-name {
+            color: #EBB251;
+        }
+
+        .nav-link,
+        .nav-link:hover {
+            color: #EBB251;
+        }
+
+        .nav-link {
+            opacity: 0.6;
+            transition: all 0.25s;
+        }
+
+            .nav-link:hover,
+            .nav-link.active {
+                opacity: 1;
+            }
+
+            .nav-link.active {
+                position: relative;
+            }
+
+                .nav-link.active::after {
+                    content: "";
+                    width: 7px;
+                    height: 7px;
+                    display: block;
+                    background: #EBB251;
+                    border-radius: 50%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3 transparent-dark">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Numeru.Web</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+        <nav class="navbar mb-3 transparent-dark d-flex align-items-center justify-content-between">
+
+            @*<a class="navbar-brand ms-2 logo d-flex align-items-center justify-content-center" href="/">
+                    <img src="~/img/logo_64_64.png" />
+                    <div class="ms-2 site-name d-none d-lg-block">Numeru</div>
+                </a>*@
+
+            <div></div>
+
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Момент</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Судьба</a>
+                </li>
+            </ul>
+
+            <div>
+                <!-- empty -->
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
