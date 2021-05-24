@@ -8,11 +8,11 @@ namespace Numeru.Web.Controllers
 {
     public class MomentController: Controller
     {
-        private readonly IDigitService _digit;
+        private readonly INumberService _number;
 
-        public MomentController(IDigitService digit)
+        public MomentController(INumberService digit)
         {
-            this._digit = digit;
+            this._number = digit;
         }
 
         public async Task<ActionResult> Index()
@@ -20,7 +20,7 @@ namespace Numeru.Web.Controllers
             await Task.Yield();
 
             var date = DateTime.Now;
-            var number = this._digit.Digit(date);
+            var number = this._number.FromDate(date);
 
             var vm = new MomentIndexViewModel
             {

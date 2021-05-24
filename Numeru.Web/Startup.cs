@@ -25,7 +25,7 @@ namespace Numeru.Web
         {
             services.AddControllersWithViews();
 
-            services.AddScoped<IDigitService, DigitService>();
+            services.AddScoped<INumberService, NumberService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
