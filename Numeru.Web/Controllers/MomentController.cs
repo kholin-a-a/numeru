@@ -14,10 +14,9 @@ namespace Numeru.Web.Controllers
             var vm = new MomentIndexViewModel
             {
                 Number = 11,
+                Description = "Кармическое число - благоприятный знак.",
                 Date = DateTime.Now,
                 Prediction = "Если проявите внимательность, то разглядите большую любовь совсем близко от себя.",
-                DominantNumber = true,
-                KarmicNumber = true,
                 Calculation = new List<string>()
                 {
                     "2 + 0 + 0 + 5 + 2 + 0 + 2 + 1 + 1",
