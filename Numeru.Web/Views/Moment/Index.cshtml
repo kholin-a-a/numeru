@@ -18,9 +18,20 @@
             right: 0;
             text-align: center;
             width: 250px;
+
+            animation: rotate 35s linear infinite;
         }
 
-    
+    @@keyframes rotate {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
     .reload__btn {
         max-width: 400px;
     }
