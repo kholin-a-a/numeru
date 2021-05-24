@@ -19,14 +19,18 @@
             text-align: center;
             width: 250px;
         }
+
+    .reload__btn {
+        max-width: 400px;
+    }
 </style>
 
-<div class="block row">
+<div class="block text-center">
     Нумерология момента Вашего нахождения здесь предскажет Ваше будущее.
 </div>
 
-<div class="row mt-1">
-    <div class="block col-12">
+<div class="mt-1">
+    <div class="block">
         <div class="d-flex justify-content-around">
             <div class="text-center">
                 <div>
@@ -54,18 +58,18 @@
         </div>
 
         <div class="mt-4 text-center">
-            <button class="btn btn-outline-light rounded-pill w-100">
+            <button class="btn btn-outline-light rounded-pill w-100 reload__btn">
                 Обновить
             </button>
 
-            <div>
+            <div class="mt-1">
                 <small>Обратитесь к вселенной с волнующим Вас вопросом</small>
             </div>
         </div>
     </div>
 </div>
 
-<div class="block row mt-1">
+<div class="block mt-1">
     <div class="mt-2">
         @Model.Description
     </div>
