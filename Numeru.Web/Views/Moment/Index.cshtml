@@ -9,6 +9,7 @@
         position: relative;
         height: 250px;
     }
+
         .moment__number img {
             position: absolute;
             margin-left: auto;
@@ -17,7 +18,6 @@
             right: 0;
             text-align: center;
             width: 250px;
-
             /*animation: rotate 60s linear infinite;*/
             opacity: 0.55;
         }
@@ -70,7 +70,7 @@
 
         <div class="moment__number d-flex align-items-center justify-content-center w-100">
             <img src="~/img/seal_2.svg" />
-            
+
             <div class="moment__number__value">
                 @Model.Number
             </div>
@@ -93,27 +93,23 @@
 </div>
 
 <div class="block mt-1">
-    <div class="btn btn-outline-secondary">
-        Подробный рассчет
+    <div class="btn btn-link text-secondary rounded-pill" data-bs-toggle="collapse" data-bs-target="#calculation-block" aria-expanded="false" aria-controls="calculation-block">
+        Нумерологический рассчет
     </div>
 
-    <div class="">
+    <div class="row collapse mt-2" id="calculation-block">
+        <div class="col-9">
+            @foreach (var line in Model.Calculation)
+            {
+                <div>@line</div>
+            }
+        </div>
 
-
-        <div class="row collapse mt-2" id="calculation-block">
-            <div class="col-9">
-                @foreach (var line in Model.Calculation)
-                {
-                    <div>@line</div>
-                }
-            </div>
-
-            <div class="col-3 text-end text-secondary">
-                @foreach (var line in Model.CalculationRemark)
-                {
-                    <div>@line</div>
-                }
-            </div>
+        <div class="col-3 text-end text-secondary">
+            @foreach (var line in Model.CalculationRemark)
+            {
+                <div>@line</div>
+            }
         </div>
     </div>
 </div>
