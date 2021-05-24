@@ -9,10 +9,14 @@ namespace Numeru.Web.Controllers
     public class MomentController: Controller
     {
         private readonly INumberService _number;
+        private readonly IDateAlgorithm _dateAlgorithm;
 
-        public MomentController(INumberService digit)
+        public MomentController(
+            INumberService numberService,
+            IDateAlgorithm dateAlgorithm)
         {
-            this._number = digit;
+            this._number = numberService;
+            this._dateAlgorithm = dateAlgorithm;
         }
 
         public async Task<ActionResult> Index()
@@ -36,12 +40,7 @@ namespace Numeru.Web.Controllers
                     "=",
                     "32 → 3 + 2 = 5"
                 },
-                CalculationRemark = new List<string>()
-                {
-                    "Дата",
-                    "+",
-                    "Время"
-                }
+                CalculationRemark = this._dateAlgorithm.Plan()
             };
 
             return View(vm);
