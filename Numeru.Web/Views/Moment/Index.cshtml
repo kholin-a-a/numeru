@@ -4,6 +4,23 @@
     ViewData["Title"] = "Момент";
 }
 
+<style>
+    .moment__number {
+        position: relative;
+        height: 250px;
+    }
+
+        .moment__number img {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            width: 250px;
+        }
+</style>
+
 <div class="block row">
     Нумерология момента Вашего нахождения здесь предскажет Ваше будущее.
 </div>
@@ -28,13 +45,12 @@
             </div>
         </div>
 
-        <div class="text-center">
+        <div class="moment__number d-flex align-items-center justify-content-center w-100">
             <div class="display-1">
                 @Model.Number
             </div>
-            <div>
-                Число момента
-            </div>
+
+            <img src="~/img/son.svg" />
         </div>
 
         <div class="mt-4 text-center">
