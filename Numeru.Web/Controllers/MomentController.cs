@@ -2,29 +2,29 @@
 using Numeru.Services;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace Numeru.Web.Controllers
 {
     public class MomentController: Controller
     {
         private readonly INumberService _number;
-        private readonly IDateAlgorithm _dateAlgorithm;
+        private readonly IEvaluationAlgorithm<DateTime> _algorithm;
 
         public MomentController(
             INumberService numberService,
-            IDateAlgorithm dateAlgorithm)
+            IEvaluationAlgorithm<DateTime> algorithm
+        )
         {
             this._number = numberService;
-            this._dateAlgorithm = dateAlgorithm;
+            this._algorithm = algorithm;
         }
 
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            await Task.Yield();
-
             var date = DateTime.Now;
-            var number = this._number.FromDate(date);
+
+            var number = this._algorithm.Execute(date);
 
             var vm = new MomentIndexViewModel
             {
@@ -32,8 +32,13 @@ namespace Numeru.Web.Controllers
                 Description = this._number.Describe(number),
                 Date = date,
                 Prediction = "Если проявите внимательность, то разглядите большую любовь совсем близко от себя.",
-                Calculation = this._dateAlgorithm.Trace(date),
-                CalculationRemark = this._dateAlgorithm.Plan()
+                Calculation = this._algorithm
+                    .Trace(date)
+                    .Skip(2),
+                CalculationRemark = new List<string>()
+                {
+                    this._algorithm.Abstraction()
+                }
             };
 
             return View(vm);

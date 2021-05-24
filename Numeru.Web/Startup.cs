@@ -1,14 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Numeru.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Numeru.Web
 {
@@ -28,10 +24,9 @@ namespace Numeru.Web
             services.AddScoped<INumberService, NumberService>();
             services.AddScoped<IKindDefinder, NumberKindDefinder>();
             services.AddScoped<IDescriptionRepository, NumberDescriptionRepository>();
-            services.AddScoped<IDateAlgorithm, DateAlgorithm>();
+            services.AddScoped<IEvaluationAlgorithm<DateTime>, DateAlgorithm>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -41,9 +36,9 @@ namespace Numeru.Web
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

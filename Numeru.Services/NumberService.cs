@@ -1,7 +1,4 @@
-﻿using Numeru.Numerologic;
-using System;
-
-namespace Numeru.Services
+﻿namespace Numeru.Services
 {
     public class NumberService : INumberService
     {
@@ -15,17 +12,6 @@ namespace Numeru.Services
         {
             this._descriptions = descriptions;
             this._kindDefinder = kindDefinder;
-        }
-
-        public int FromDate(DateTime dateTime)
-        {
-            var number = new Number(
-                dateTime.ToString("ddMMyyyyhhmmss")
-                );
-
-            number.Evaluate();
-
-            return number.AsInt();
         }
 
         public string Describe(int num)
