@@ -5,6 +5,13 @@ namespace Numeru.Services
 {
     public abstract class EvaluationAlgorithm<T>: IEvaluationAlgorithm<T>
     {
+        private readonly AbstractEvaluator _evaluator;
+
+        public EvaluationAlgorithm(AbstractEvaluator evaluator)
+        {
+            this._evaluator = evaluator;
+        }
+
         public IEnumerable<string> Trace(T value)
         {
             var number = new Number(
@@ -22,9 +29,9 @@ namespace Numeru.Services
                 this.ToNumber(value)
                 );
 
-            number.Evaluate();
-
-            return number.AsInt();
+            return this._evaluator
+                .Evaluate(number)
+                .AsInt();
         }
 
         public virtual string Abstraction()

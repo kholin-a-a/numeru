@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using Numeru.Numerologic;
+using System.Linq;
 
 namespace Numeru.Services
 {
@@ -6,9 +7,7 @@ namespace Numeru.Services
     {
         private readonly IAlphabet _alphabet;
 
-        public PersonAlgorithm(
-            IAlphabet alphabet
-        )
+        public PersonAlgorithm(AbstractEvaluator evaluator, IAlphabet alphabet): base(evaluator)
         {
             this._alphabet = alphabet;
         }

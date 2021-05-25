@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
+using Numeru.Numerologic;
 using Numeru.Services;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,8 @@ namespace Numeru.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddScoped<AbstractEvaluator, BaseEvaluator>();
 
             services.AddScoped<INumberService, NumberService>();
             services.AddScoped<IKindDefinder, NumberKindDefinder>();
