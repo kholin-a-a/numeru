@@ -47,7 +47,7 @@
 
 @if (Model.Calculated)
 {
-    <div class="block mt-1">
+    <div class="block mt-1" id="prediction-block">
         <partial name="~/Views/Partials/_Number.cshtml" model="@Model.Number" />
 
         <div class="mt-2 lead text-center">
@@ -58,4 +58,13 @@
             @Model.Prediction
         </div>
     </div>
+}
+
+@section Scripts {
+    <script>
+        const predictionEl = document.querySelector("#prediction-block");
+        if (predictionEl) {
+            predictionEl.scrollIntoView();
+        }
+    </script>
 }
