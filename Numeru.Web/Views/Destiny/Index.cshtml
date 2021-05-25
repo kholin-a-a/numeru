@@ -2,6 +2,28 @@
     ViewData["Title"] = "Судьба";
 }
 
+<style>
+    input[type="submit"] {
+        max-width: 400px;
+    }
+</style>
+
 <div class="block text-center">
     Имя, данное Вам при рождении и дата Вашего рождения расскажут о Вашей судьбе и Вашем предназначении.
+</div>
+
+<div class="block mt-1">
+    <div>
+        <label class="form-label">Полное имя при рождении</label>
+        <input class="form-control" />
+    </div>
+
+    <div class="mt-2">
+        <label class="form-label">Дата рождения</label>
+        <input type="date" class="form-control" />
+    </div>
+
+    <div class="mt-4 text-center">
+        <input type="submit" class="btn btn-outline-light rounded-pill w-100" value="Рассчитать" />
+    </div>
 </div>
