@@ -2,7 +2,7 @@
 
 namespace Numeru.Numerologic
 {
-    public abstract class BaseEvaluator
+    public abstract class AbstractEvaluator
     {
         public Number Evaluate(Number number)
         {
