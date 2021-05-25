@@ -33,7 +33,8 @@ namespace Numeru.Services
                 .GetAll()
                 .ToArray();
 
-            var index = new Random().Next(0, predictions.Length - 1);
+            var rate = new Random().Next(1, predictions.Length / num);
+            var index = rate * num;
 
             return predictions[index];
         }
