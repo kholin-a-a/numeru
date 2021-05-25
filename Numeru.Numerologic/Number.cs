@@ -39,26 +39,16 @@ namespace Numeru.Numerologic
             return this._strForm.ToSequence().Count() == 2
                 &&
                 karmic.Contains(
-                    this._strForm.ToNumber()
+                    this._strForm.ParseInt()
                 );
         }
 
-        public bool IsEvaluated()
+        public int ToInt()
         {
-            return
-                this.IsBase()
-                ||
-                this.IsDominant()
-                ||
-                this.IsKarmic();
+            return this._strForm.ParseInt();
         }
 
-        public int AsInt()
-        {
-            return this._strForm.ToNumber();
-        }
-
-        public string AsString()
+        public override string ToString()
         {
             return this._strForm;
         }

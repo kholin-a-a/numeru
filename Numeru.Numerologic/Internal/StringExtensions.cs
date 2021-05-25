@@ -13,7 +13,7 @@ namespace Numeru.Numerologic
                 ;
         }
 
-        public static int ToNumber(this string number)
+        public static int ParseInt(this string number)
         {
             return int.Parse(number);
         }

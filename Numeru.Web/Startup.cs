@@ -28,13 +28,10 @@ namespace Numeru.Web
             services.AddScoped<AbstractEvaluator, BaseEvaluator>();
 
             services.AddScoped<INumberService, NumberService>();
-            services.AddScoped<IKindDefinder, NumberKindDefinder>();
             services.AddScoped<IAlphabet, RussianAlphabet>();
 
             services.AddScoped<IEvaluationAlgorithm<DateTime>, DateTimeAlgorithm>();
             services.AddScoped<IEvaluationAlgorithm<Person>, PersonAlgorithm>();
-
-            services.AddScoped<IDescriptionRepository, NumberDescriptionRepository>();
 
             var predictions = JsonConvert.DeserializeObject<IEnumerable<string>>(
                 File.ReadAllText(

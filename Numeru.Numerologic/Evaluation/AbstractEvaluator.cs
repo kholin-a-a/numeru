@@ -12,7 +12,7 @@ namespace Numeru.Numerologic
             }
 
             var sum = number
-                    .AsString()
+                    .ToString()
                     .ToSequence()
                     .Sum();
 

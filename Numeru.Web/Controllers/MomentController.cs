@@ -29,7 +29,6 @@ namespace Numeru.Web.Controllers
             var vm = new MomentIndexViewModel
             {
                 Number = number,
-                Description = this._number.Describe(number),
                 Date = date,
                 Prediction = this._number.Predict(number),
                 Calculation = this._algorithm

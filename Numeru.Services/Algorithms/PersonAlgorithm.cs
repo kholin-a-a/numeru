@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Numeru.Services
 {
-    public class PersonAlgorithm : EvaluationAlgorithm<Person>
+    public class PersonAlgorithm : AbstractEvaluationAlgorithm<Person>
     {
         private readonly IAlphabet _alphabet;
 

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Numeru.Services
 {
-    public abstract class EvaluationAlgorithm<T>: IEvaluationAlgorithm<T>
+    public abstract class AbstractEvaluationAlgorithm<T>: IEvaluationAlgorithm<T>
     {
         private readonly AbstractEvaluator _evaluator;
 
-        public EvaluationAlgorithm(AbstractEvaluator evaluator)
+        public AbstractEvaluationAlgorithm(AbstractEvaluator evaluator)
         {
             this._evaluator = evaluator;
         }
@@ -26,7 +26,7 @@ namespace Numeru.Services
 
             return this._evaluator
                 .Evaluate(number)
-                .AsInt();
+                .ToInt();
         }
 
         public virtual string Abstraction()

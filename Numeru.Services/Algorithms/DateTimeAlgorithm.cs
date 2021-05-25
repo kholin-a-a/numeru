@@ -3,7 +3,7 @@ using System;
 
 namespace Numeru.Services
 {
-    public class DateTimeAlgorithm : EvaluationAlgorithm<DateTime>
+    public class DateTimeAlgorithm : AbstractEvaluationAlgorithm<DateTime>
     {
         public DateTimeAlgorithm(AbstractEvaluator evaluator) : base(evaluator)
         { }
