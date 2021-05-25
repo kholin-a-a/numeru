@@ -20,5 +20,7 @@ namespace Numeru.Web
         public DateTime BirthDate { get; set; }
 
         public bool Calculated { get; set; }
+
+        public int Number { get; set; }
     }
 }
