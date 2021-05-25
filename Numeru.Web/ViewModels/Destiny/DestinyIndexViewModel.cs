@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Numeru.Web
 {
-    public class DestinyIndexViewModel
+    public class DestinyIndexViewModel: IValidatableObject
     {
         public DestinyIndexViewModel()
         {
@@ -24,5 +27,26 @@ namespace Numeru.Web
         public int Number { get; set; }
 
         public string Prediction { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var errors = new List<ValidationResult>();
+
+            var allowedRegex = new Regex("[а-яА-Я ]");
+            
+            var allAlowed = this.Fullname
+                .Select(c => c.ToString())
+                .All(c => allowedRegex.IsMatch(c))
+                ;
+
+            if (!allAlowed)
+            {
+                errors.Add(
+                    new ValidationResult("Можно вводить только русские буквы и пробелы", new List<string> { nameof(Fullname) })
+                );
+            }
+
+            return errors;
+        }
     }
 }
