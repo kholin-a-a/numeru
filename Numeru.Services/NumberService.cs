@@ -20,7 +20,8 @@ namespace Numeru.Services
                 .GetAll()
                 .ToArray();
 
-            var rate = new Random().Next(1, predictions.Length / num);
+            var seed = (int)DateTime.Now.TimeOfDay.TotalSeconds;
+            var rate = new Random(seed).Next(1, predictions.Length / num);
             var index = rate * num;
 
             return predictions[index];
