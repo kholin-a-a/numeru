@@ -88,6 +88,11 @@ namespace Numeru.Numerologic
             return this._number.ToNumber();
         }
 
+        public string AsString()
+        {
+            return this._number;
+        }
+
         public IEnumerable<string> Trace()
         {
             return this._trace;
