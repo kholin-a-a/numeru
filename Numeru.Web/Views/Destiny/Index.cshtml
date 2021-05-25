@@ -1,4 +1,5 @@
-﻿@{ 
+﻿@model DestinyIndexViewModel; 
+@{ 
     ViewData["Title"] = "Судьба";
 }
 
@@ -12,18 +13,30 @@
     Имя, данное Вам при рождении и дата Вашего рождения расскажут о Вашей судьбе и Вашем предназначении.
 </div>
 
-<div class="block mt-1">
+<form class="block mt-1" asp-controller="Destiny" asp-action="Index" method="post">
     <div>
-        <label class="form-label">Полное имя при рождении</label>
-        <input class="form-control" />
+        <label class="form-label" asp-for="@Model.Fullname"></label>
+        <input class="form-control" asp-for="@Model.Fullname" />
+        <span asp-validation-for="@Model.Fullname" class="text-danger"></span>
+
+        <div class="">
+            <small>
+                Например: <em>Иванов Иван Иванович</em>
+                <br />
+                Заглавные или строчные буквы - не важно.
+                <br />
+                Порядок написания - не важен.
+            </small>
+        </div>
     </div>
 
     <div class="mt-2">
-        <label class="form-label">Дата рождения</label>
-        <input type="date" class="form-control" />
+        <label class="form-label" asp-for="@Model.BirthDate"></label>
+        <input type="date" class="form-control" asp-for="@Model.BirthDate" />
+        <span asp-validation-for="@Model.BirthDate" class="text-danger"></span>
     </div>
 
     <div class="mt-4 text-center">
         <input type="submit" class="btn btn-outline-light rounded-pill w-100" value="Рассчитать" />
     </div>
-</div>
+</form>
