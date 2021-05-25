@@ -66,14 +66,14 @@
 <body>
     <header>
         <nav class="navbar mb-3 transparent-dark d-flex align-items-center justify-content-between">
-            <div class="logo d-flex align-items-center ps-2 navbar__left">
+            <a class="navbar-brand logo d-flex align-items-center ps-2 navbar__left" href="/">
                 <img src="~/img/logo_64_64.png" />
                 <div class="site-name d-none d-lg-block ms-2">Numeru</div>
-            </div>
+            </a>
 
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Момент</a>
+                    <a class="nav-link active" asp-controller="Moment" asp-action="Index">Момент</a>
                 </li>
 
                 <li class="nav-item">
