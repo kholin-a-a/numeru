@@ -1,57 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Numeru.Numerologic
 {
     public class Number
     {
-        private string _number;
-        private readonly List<string> _trace;
+        private string _strForm;
 
         public Number(string number)
         {
-            this._number = number;
-            this._trace = new List<string>();
+            this._strForm = number;
         }
 
-        public Number(int num)
+        public Number(int number)
         {
-            this._number = num.ToString();
-        }
-
-        public void Evaluate()
-        {
-            this._trace.Clear();
-            this._trace.Add(this._number);
-
-            while (!this.IsEvaluated())
-            {    
-                this._trace.Add("→");
-
-                var seq = this._number.ToSequence();
-                
-                this._trace.Add(
-                    string.Join(" + ", seq)
-                    );
-
-                var sum = seq.Sum();
-
-                this._trace.Add("=");
-                this._trace.Add(sum.ToString());
-
-                this._number = sum.ToString();
-            }
+            this._strForm = number.ToString();
         }
 
         public bool IsBase()
         {
-            return this._number.ToSequence().Count() == 1;
+            return this._strForm.ToSequence().Count() == 1;
         }
 
         public bool IsDominant()
         {
-            var numbers = this._number.ToSequence();
+            var numbers = this._strForm.ToSequence();
 
             return numbers.Count() > 1
                 &&
@@ -63,10 +36,10 @@ namespace Numeru.Numerologic
         {
             var karmic = new List<int> { 13, 14, 16, 19 };
 
-            return this._number.ToSequence().Count() == 2
+            return this._strForm.ToSequence().Count() == 2
                 &&
                 karmic.Contains(
-                    this._number.ToNumber()
+                    this._strForm.ToNumber()
                 );
         }
 
@@ -82,20 +55,12 @@ namespace Numeru.Numerologic
 
         public int AsInt()
         {
-            if (!this.IsEvaluated())
-                throw new InvalidOperationException("Unable to cast non-evaluated numbers");
-
-            return this._number.ToNumber();
+            return this._strForm.ToNumber();
         }
 
         public string AsString()
         {
-            return this._number;
-        }
-
-        public IEnumerable<string> Trace()
-        {
-            return this._trace;
+            return this._strForm;
         }
     }
 }

@@ -14,13 +14,8 @@ namespace Numeru.Services
 
         public IEnumerable<string> Trace(T value)
         {
-            var number = new Number(
-                this.ToNumber(value)
-                );
-
-            number.Evaluate();
-
-            return number.Trace();
+            // TO DO: Implement
+            return new List<string>();
         }
 
         public int Execute(T value)
