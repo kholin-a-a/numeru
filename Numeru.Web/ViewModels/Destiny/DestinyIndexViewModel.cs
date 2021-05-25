@@ -18,5 +18,7 @@ namespace Numeru.Web
         [Required(ErrorMessage = "Заполните, пожалуйста")]
         [Display(Name = "Дата рождения")]
         public DateTime BirthDate { get; set; }
+
+        public bool Calculated { get; set; }
     }
 }

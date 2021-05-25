@@ -17,8 +17,11 @@ namespace Numeru.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
+                vm.Calculated = false;
                 return View(vm);
             }
+
+            vm.Calculated = true;
 
             return View(vm);
         }

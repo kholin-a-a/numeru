@@ -1,5 +1,5 @@
-﻿@model DestinyIndexViewModel; 
-@{ 
+﻿@model DestinyIndexViewModel;
+@{
     ViewData["Title"] = "Судьба";
 }
 
@@ -40,3 +40,10 @@
         <input type="submit" class="btn btn-outline-light rounded-pill w-100" value="Рассчитать" />
     </div>
 </form>
+
+@if (Model.Calculated)
+{
+    <div class="block mt-1">
+        Results
+    </div>
+}
