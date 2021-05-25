@@ -22,5 +22,7 @@ namespace Numeru.Web
         public bool Calculated { get; set; }
 
         public int Number { get; set; }
+
+        public string Prediction { get; set; }
     }
 }
