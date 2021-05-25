@@ -2,7 +2,7 @@
 
 namespace Numeru.Services
 {
-    public class RussianAlphabet : IAlphabet<Russian>
+    public class RussianAlphabet : IAlphabet
     {
         private readonly List<string> _letters;
 
@@ -17,9 +17,14 @@ namespace Numeru.Services
             };
         }
 
+        public bool Contains(string letter)
+        {
+            return this._letters.Contains(letter.ToLower());
+        }
+
         public int NumberOf(string letter)
         {
-            return this._letters.IndexOf(letter) + 1;
+            return this._letters.IndexOf(letter.ToLower()) + 1;
         }
     }
 }

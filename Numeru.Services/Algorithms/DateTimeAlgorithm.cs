@@ -2,7 +2,7 @@
 
 namespace Numeru.Services
 {
-    public class DateAlgorithm : EvaluationAlgorithm<DateTime>
+    public class DateTimeAlgorithm : EvaluationAlgorithm<DateTime>
     {
         public override string Abstraction()
         {

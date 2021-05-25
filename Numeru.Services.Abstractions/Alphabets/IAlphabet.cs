@@ -1,7 +1,9 @@
 ﻿namespace Numeru.Services
 {
-    public interface IAlphabet<TLanguage>
+    public interface IAlphabet
     {
         int NumberOf(string letter);
+
+        bool Contains(string letter);
     }
 }
