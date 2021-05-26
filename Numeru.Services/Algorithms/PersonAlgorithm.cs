@@ -17,7 +17,7 @@ namespace Numeru.Services
             return "Полное имя + Дата рождения";
         }
 
-        protected override string ToNumber(Person value)
+        protected override Number ToNumber(Person value)
         {
             var numbers = value.Fullname
                 .Select(c => c.ToString())
@@ -26,7 +26,9 @@ namespace Numeru.Services
                 .ToArray()
                 ;
 
-            return string.Join("", numbers) + value.BirthDate.ToString("ddMMyyyy");
+            var str = string.Join("", numbers) + value.BirthDate.ToString("ddMMyyyy");
+
+            return new Number(str);
         }
     }
 }

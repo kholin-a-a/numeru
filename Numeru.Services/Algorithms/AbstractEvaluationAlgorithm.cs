@@ -16,24 +16,17 @@ namespace Numeru.Services
 
         public IEnumerable<string> Trace(T value)
         {
-            var number = new Number(
-                this.ToNumber(value)
-                );
-
+            var number = this.ToNumber(value);
             this._tracer.Clear();
 
-            this._evaluator.Evaluate(
-                number, this._tracer
-                );
+            this._evaluator.Evaluate(number, this._tracer);
 
             return this._tracer.Trace();
         }
 
         public int Execute(T value)
         {
-            var number = new Number(
-                this.ToNumber(value)
-                );
+            var number = this.ToNumber(value);
 
             return this._evaluator
                 .Evaluate(number)
@@ -45,6 +38,6 @@ namespace Numeru.Services
             return string.Empty;
         }
 
-        protected abstract string ToNumber(T value);
+        protected abstract Number ToNumber(T value);
     }
 }

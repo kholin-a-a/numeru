@@ -13,9 +13,11 @@ namespace Numeru.Services
             return "Дата + Время";
         }
 
-        protected override string ToNumber(DateTime value)
+        protected override Number ToNumber(DateTime value)
         {
-            return value.ToString("ddMMyyyyHHmmss");
+            return new Number(
+                value.ToString("ddMMyyyyHHmmss")
+                );
         }
     }
 }
