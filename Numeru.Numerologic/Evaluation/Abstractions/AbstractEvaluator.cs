@@ -15,7 +15,6 @@ namespace Numeru.Numerologic
         {
             if (this.Done(number))
             {
-                tracer.Done(number);
                 return number;
             }
 
@@ -24,11 +23,10 @@ namespace Numeru.Numerologic
             var sequence = number.ToString().ToSequence();
             tracer.Split(sequence);
 
-            var sum = sequence.Sum();
+            var sum = new Number(sequence.Sum());
+            tracer.Summed(sum);
 
-            return this.Evaluate(
-                new Number(sum), tracer
-                );
+            return this.Evaluate(sum, tracer);
         }
 
         protected abstract bool Done(Number number);

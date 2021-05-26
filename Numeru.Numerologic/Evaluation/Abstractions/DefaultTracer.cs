@@ -4,7 +4,7 @@ namespace Numeru.Numerologic
 {
     internal class DefaultTracer : IEvaluationTracer
     {
-        public void Done(Number number)
+        public void Clear()
         { }
 
         public void Split(IEnumerable<int> sequence)
@@ -15,5 +15,10 @@ namespace Numeru.Numerologic
 
         public void Taken(Number number)
         { }
+
+        public IEnumerable<string> Trace()
+        {
+            return default;
+        }
     }
 }

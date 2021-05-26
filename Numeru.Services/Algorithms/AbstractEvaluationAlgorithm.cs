@@ -6,16 +6,27 @@ namespace Numeru.Services
     public abstract class AbstractEvaluationAlgorithm<T>: IEvaluationAlgorithm<T>
     {
         private readonly AbstractEvaluator _evaluator;
+        private readonly IEvaluationTracer _tracer;
 
-        public AbstractEvaluationAlgorithm(AbstractEvaluator evaluator)
+        public AbstractEvaluationAlgorithm(AbstractEvaluator evaluator, IEvaluationTracer tracer)
         {
             this._evaluator = evaluator;
+            this._tracer = tracer;
         }
 
         public IEnumerable<string> Trace(T value)
         {
-            // TO DO: Implement
-            return new List<string>();
+            var number = new Number(
+                this.ToNumber(value)
+                );
+
+            this._tracer.Clear();
+
+            this._evaluator.Evaluate(
+                number, this._tracer
+                );
+
+            return this._tracer.Trace();
         }
 
         public int Execute(T value)

@@ -10,6 +10,8 @@ namespace Numeru.Numerologic
 
         void Summed(Number number);
 
-        void Done(Number number);
+        void Clear();
+
+        IEnumerable<string> Trace();
     }
 }

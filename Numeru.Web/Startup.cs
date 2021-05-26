@@ -29,6 +29,7 @@ namespace Numeru.Web
 
             services.AddScoped<INumberService, NumberService>();
             services.AddScoped<IAlphabet, RussianAlphabet>();
+            services.AddScoped<IEvaluationTracer, EvaluationTracer>();
 
             services.AddScoped<IEvaluationAlgorithm<DateTime>, DateTimeAlgorithm>();
             services.AddScoped<IEvaluationAlgorithm<Person>, PersonAlgorithm>();

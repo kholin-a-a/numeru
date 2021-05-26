@@ -7,7 +7,7 @@ namespace Numeru.Services
     {
         private readonly IAlphabet _alphabet;
 
-        public PersonAlgorithm(AbstractEvaluator evaluator, IAlphabet alphabet): base(evaluator)
+        public PersonAlgorithm(AbstractEvaluator evaluator, IEvaluationTracer tracer, IAlphabet alphabet): base(evaluator, tracer)
         {
             this._alphabet = alphabet;
         }
