@@ -6,17 +6,22 @@ namespace Numeru.Services
     public class NumberService : INumberService
     {
         private readonly IPredictionRepository _predictions;
+        private readonly IDestinyRepository _destinies;
 
         public NumberService(
-            IPredictionRepository predictions
+            IPredictionRepository predictions,
+            IDestinyRepository destinies
             )
         {
             this._predictions = predictions;
+            this._destinies = destinies;
         }
 
         public string Destiny(int num)
         {
-            return "";
+            return this._destinies
+                .GetAll()
+                .ElementAt(num - 1);
         }
 
         public string Predict(int num)

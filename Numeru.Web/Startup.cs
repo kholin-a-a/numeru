@@ -44,6 +44,15 @@ namespace Numeru.Web
                 new InMemoryPredictionRepository(predictions)
             );
 
+            var destinies = JsonConvert.DeserializeObject<IEnumerable<string>>(
+                File.ReadAllText(
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data/destiny.json")
+                    )
+                );
+
+            services.AddScoped<IDestinyRepository>(sp =>
+                new InMemoryDestinyRepository(destinies)
+            );
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
