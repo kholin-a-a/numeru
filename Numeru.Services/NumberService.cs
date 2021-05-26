@@ -14,6 +14,11 @@ namespace Numeru.Services
             this._predictions = predictions;
         }
 
+        public string Destiny(int num)
+        {
+            return "";
+        }
+
         public string Predict(int num)
         {
             var predictions = this._predictions
@@ -26,5 +31,7 @@ namespace Numeru.Services
 
             return predictions[index];
         }
+
+
     }
 }
