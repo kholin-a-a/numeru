@@ -1,4 +1,16 @@
-﻿<!DOCTYPE html>
+﻿@functions {
+    string ActiveWhen(string route)
+    {
+        if ((string)ViewData["Route"] == route)
+        {
+            return "active";
+        }
+
+        return "";
+    }
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -17,7 +29,7 @@
             .navbar__left,
             .navbar__right {
                 width: 100px;
-            } 
+            }
         }
 
         .logo img {
@@ -73,11 +85,11 @@
 
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link active" asp-controller="Moment" asp-action="Index">Момент</a>
+                    <a class="nav-link @ActiveWhen("Moment")" asp-controller="Moment" asp-action="Index">Момент</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" asp-controller="Destiny" asp-action="Index">Судьба</a>
+                    <a class="nav-link @ActiveWhen("Destiny")" asp-controller="Destiny" asp-action="Index">Судьба</a>
                 </li>
             </ul>
 
