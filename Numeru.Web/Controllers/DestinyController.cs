@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Numeru.Services;
-using System.Linq;
 
 namespace Numeru.Web.Controllers
 {
