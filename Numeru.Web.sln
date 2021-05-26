@@ -7,11 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numeru.Web", "Numeru.Web\Nu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numeru.Numerologic", "Numeru.Numerologic\Numeru.Numerologic.csproj", "{0FE45E99-AADB-4D84-9720-95D5E481701F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numeru.Services.Abstractions", "Numeru.Services.Abstractions\Numeru.Services.Abstractions.csproj", "{694BE2B0-B82F-4FE8-B279-14AAAB8C60E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numeru.Services.Abstractions", "Numeru.Services.Abstractions\Numeru.Services.Abstractions.csproj", "{694BE2B0-B82F-4FE8-B279-14AAAB8C60E6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numeru.Services", "Numeru.Services\Numeru.Services.csproj", "{69973636-E036-407E-89E4-769B3E7BA859}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numeru.Web.Entry", "Numeru.Web.Entry\Numeru.Web.Entry.csproj", "{0055C855-B6BA-4607-9151-D939BC50B46F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numeru.Services", "Numeru.Services\Numeru.Services.csproj", "{69973636-E036-407E-89E4-769B3E7BA859}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{69973636-E036-407E-89E4-769B3E7BA859}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69973636-E036-407E-89E4-769B3E7BA859}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69973636-E036-407E-89E4-769B3E7BA859}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0055C855-B6BA-4607-9151-D939BC50B46F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0055C855-B6BA-4607-9151-D939BC50B46F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0055C855-B6BA-4607-9151-D939BC50B46F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0055C855-B6BA-4607-9151-D939BC50B46F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
