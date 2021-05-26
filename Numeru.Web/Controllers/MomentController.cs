@@ -31,12 +31,10 @@ namespace Numeru.Web.Controllers
                 Number = number,
                 Date = date,
                 Prediction = this._number.Predict(number),
-                Calculation = this._algorithm
-                    .Trace(date)
-                    .Skip(2),
-                CalculationRemark = new List<string>()
+                Calculation = new NumericCalculationViewModel
                 {
-                    this._algorithm.Abstraction()
+                    Abstract = this._algorithm.Abstraction(),
+                    Calculations = this._algorithm.Trace(date).Skip(2)
                 }
             };
 

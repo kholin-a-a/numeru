@@ -1,0 +1,19 @@
+﻿@model NumericCalculationViewModel;
+
+
+<div class="w-100 btn btn-link text-secondary rounded-pill" data-bs-toggle="collapse" data-bs-target="#calculation-block" aria-expanded="false" aria-controls="calculation-block">
+    Нумерологический рассчет
+</div>
+
+<div class="row collapse mt-2" id="calculation-block">
+    <div class="col-9">
+        @foreach (var line in Model.Calculations)
+        {
+            <div>@line</div>
+        }
+    </div>
+
+    <div class="col-3 text-end text-secondary">
+        <div>@Model.Abstract</div>
+    </div>
+</div>

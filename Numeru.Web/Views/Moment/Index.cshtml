@@ -53,23 +53,5 @@
 </div>
 
 <div class="block mt-1">
-    <div class="w-100 btn btn-link text-secondary rounded-pill" data-bs-toggle="collapse" data-bs-target="#calculation-block" aria-expanded="false" aria-controls="calculation-block">
-        Нумерологический рассчет
-    </div>
-
-    <div class="row collapse mt-2" id="calculation-block">
-        <div class="col-9">
-            @foreach (var line in Model.Calculation)
-            {
-                <div>@line</div>
-            }
-        </div>
-
-        <div class="col-3 text-end text-secondary">
-            @foreach (var line in Model.CalculationRemark)
-            {
-                <div>@line</div>
-            }
-        </div>
-    </div>
+    <partial name="~/Views/Partials/_NumericCalculation.cshtml" model="@Model.Calculation" />
 </div>
