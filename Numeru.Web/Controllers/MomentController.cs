@@ -34,7 +34,7 @@ namespace Numeru.Web.Controllers
                 Calculation = new NumericCalculationViewModel
                 {
                     Abstract = this._algorithm.Abstraction(),
-                    Calculations = this._algorithm.Trace(date).Skip(2)
+                    Calculations = this._algorithm.Trace(date)
                 }
             };
 

@@ -28,6 +28,8 @@ namespace Numeru.Web
 
         public string Prediction { get; set; }
 
+        public NumericCalculationViewModel Calculation { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             var errors = new List<ValidationResult>();
