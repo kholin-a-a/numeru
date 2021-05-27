@@ -10,11 +10,8 @@ services:
       - numeru-network
     volumes:
       - type: bind
-        source: ./sites-enabled
-        target: /etc/nginx/sites-enabled
-      - type: bind
-        source: ./certs
-        target: /etc/nginx/certs
+        source: ./conf.d
+        target: /etc/nginx/conf.d
 
 networks:
   numeru-network:
