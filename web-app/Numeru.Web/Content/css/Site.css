@@ -1,8 +1,12 @@
-﻿body {
+﻿html {
     background: center no-repeat url("../img/nebulu_2400_2279.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+body {
+    background: none;
 }
 
 .block {
