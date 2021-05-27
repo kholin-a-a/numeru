@@ -12,6 +12,8 @@ services:
       - type: bind
         source: ./conf.d
         target: /etc/nginx/conf.d
-
+      - type: bind
+        source: ./certs
+        target: /etc/nginx/certs
 networks:
   numeru-network:

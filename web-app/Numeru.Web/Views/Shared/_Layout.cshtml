@@ -17,9 +17,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Numeru | @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap-5.0.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/Site.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/css/Site.css" asp-append-version="true" />*@
 
     <style>
+        html {
+            background: center no-repeat url("../img/nebulu_2400_2279.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        body {
+            background: none;
+        }
+
+        .block {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border-radius: 20px;
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 700px;
+        }
+
+        .transparent-dark {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
         .navbar__left,
         .navbar__right {
             width: 50px;
