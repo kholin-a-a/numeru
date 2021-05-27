@@ -1,0 +1,14 @@
+# Binaries
+**/bin
+**/obj
+**/wwwroot
+
+# Hidden files and directories
+.vs
+.dockerignore
+.gitattributes
+Dockerfile
+.git
+.gitignore
+
+README.md
