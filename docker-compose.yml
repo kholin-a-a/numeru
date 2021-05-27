@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - numeru-network
+    volumes:
+      - type: bind
+        source: ./sites-enabled
+        target: /etc/nginx/sites-enabled
+      - type: bind
+        source: ./certs
+        target: /etc/nginx/certs
+
+  web-app:
+    image: kholinaa/numeru-web
+    networks:
+        - numeru-network
+
+networks:
+  numeru-network:
