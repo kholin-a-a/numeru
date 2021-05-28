@@ -1,0 +1,6 @@
+version: "3.7"
+
+services:
+  web-app:
+    ports:
+      - "5000:80"
