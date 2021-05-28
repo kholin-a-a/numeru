@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  nginx:
+    volumes:
+      - type: bind
+        source: ./prod.conf.d
+        target: /etc/nginx/conf.d
+      - type: bind
+        source: ./certs
+        target: /etc/nginx/certs

@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  nginx:
+    volumes:
+      - type: bind
+        source: ./dev.conf.d
+        target: /etc/nginx/conf.d
