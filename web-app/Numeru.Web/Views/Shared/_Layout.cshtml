@@ -17,18 +17,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Numeru | @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap-5.0.1/css/bootstrap.min.css" />
-    @*<link rel="stylesheet" href="~/css/Site.css" asp-append-version="true" />*@
-
     <style>
-        html {
-            background: center no-repeat url("../img/nebulu_2400_2279.jpg");
+        body:after {
+            content: "";
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            background: url(../img/nebulu_2400_2279.jpg) center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
             background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        body {
-            background: none;
         }
 
         .block {
@@ -115,7 +117,7 @@
         </script>
     </environment>
 </head>
-<body>
+<body class="pb-3">
     <header>
         <nav class="navbar mb-3 transparent-dark d-flex align-items-center justify-content-between">
             <a class="navbar-brand logo d-flex align-items-center ps-2 navbar__left" href="/">
@@ -145,11 +147,11 @@
         </main>
     </div>
 
-    <footer class="footer text-muted text-center mt-5">
+    @*<footer class="footer text-muted text-center mt-5">
         <div class="container">
             &copy; 2021 Numeru
         </div>
-    </footer>
+    </footer>*@
 
     <script src="~/lib/bootstrap-5.0.1/js/bootstrap.min.js"></script>
     @RenderSection("Scripts", required: false)
