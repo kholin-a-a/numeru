@@ -8,12 +8,5 @@ services:
       - "443:443"
     networks:
       - numeru-network
-    volumes:
-      - type: bind
-        source: ./conf.d
-        target: /etc/nginx/conf.d
-      - type: bind
-        source: ./certs
-        target: /etc/nginx/certs
 networks:
   numeru-network:
