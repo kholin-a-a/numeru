@@ -9,15 +9,6 @@
             this._description = "Многое зависит не от вас. Узнайте ответ на свой вопрос с помощью нумерологии момента.";
         }
 
-        public OpenGraphViewModel Data()
-        {
-            return new OpenGraphViewModel
-            {
-                Description = this._description,
-                Title = "Нумерология момента"
-            };
-        }
-
         public string Description()
         {
             return this._description;
