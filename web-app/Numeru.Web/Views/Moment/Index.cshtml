@@ -9,7 +9,6 @@
 
 @section MetaData {
     <meta name="description" content="@metaDescription.Get()" />
-
     <vc:open-graph title="@openGraph.Title()" description="@openGraph.Description()" />
 }
 
@@ -58,5 +57,5 @@
 </div>
 
 <div class="block mt-1">
-    <partial name="~/Views/Partials/_NumericCalculation.cshtml" model="@Model.Calculation" />
+    <vc:calculation model="@Model.Calculation" />
 </div>

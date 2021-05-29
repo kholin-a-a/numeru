@@ -10,6 +10,6 @@ namespace Numeru.Web
 
         public string Prediction { get; set; }
 
-        public NumericCalculationViewModel Calculation { get; set; }
+        public CalculationViewModel Calculation { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace Numeru.Web.Controllers
                 Number = number,
                 Date = date,
                 Prediction = this._number.Predict(number),
-                Calculation = new NumericCalculationViewModel
+                Calculation = new CalculationViewModel
                 {
                     Abstract = this._algorithm.Abstraction(),
                     Calculations = this._algorithm.Trace(date)

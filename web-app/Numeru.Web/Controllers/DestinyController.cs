@@ -44,7 +44,7 @@ namespace Numeru.Web.Controllers
 
             vm.Number = this._algorithm.Execute(person);
             vm.Prediction = this._number.Destiny(vm.Number);
-            vm.Calculation = new NumericCalculationViewModel
+            vm.Calculation = new CalculationViewModel
             {
                 Calculations = this._algorithm.Trace(person),
                 Abstract = this._algorithm.Abstraction()

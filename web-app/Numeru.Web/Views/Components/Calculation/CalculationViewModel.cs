@@ -2,7 +2,7 @@
 
 namespace Numeru.Web
 {
-    public class NumericCalculationViewModel
+    public class CalculationViewModel
     {
         public IEnumerable<string> Calculations { get; set; }
 
