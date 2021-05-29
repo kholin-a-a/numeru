@@ -1,0 +1,83 @@
+﻿body:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    height: 120vh;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: url(../img/nebulu_2400_2279.jpg) center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.block {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 20px;
+    padding: 16px;
+}
+
+.container {
+    max-width: 700px;
+}
+
+.transparent-dark {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.navbar__left,
+.navbar__right {
+    width: 50px;
+}
+
+@media all and (min-width:992px) {
+    .navbar__left,
+    .navbar__right {
+        width: 100px;
+    }
+}
+
+.logo img {
+    width: 42px;
+}
+
+.logo .site-name {
+    color: #EBB251;
+}
+
+.nav-link,
+.nav-link:hover {
+    color: #EBB251;
+}
+
+.nav-link {
+    opacity: 0.6;
+    transition: all 0.25s;
+}
+
+    .nav-link:hover,
+    .nav-link.active {
+        opacity: 1;
+    }
+
+    .nav-link.active {
+        position: relative;
+    }
+
+        .nav-link.active::after {
+            content: "";
+            width: 7px;
+            height: 7px;
+            display: block;
+            background: #EBB251;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
