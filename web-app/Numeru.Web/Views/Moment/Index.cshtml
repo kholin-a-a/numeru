@@ -5,11 +5,14 @@
 @{
     ViewData["Title"] = "Момент";
     ViewData["Route"] = "Moment";
+
+    var ogData = openGraph.Data();
 }
 
 @section MetaData {
     <meta name="description" content="@metaDescription.Get()" />
-    <partial name="~/Views/Partials/_OpenGraph.cshtml" model="openGraph.Data()" />
+
+    <vc:open-graph title="@openGraph.Title()" description="@openGraph.Description()" />
 }
 
 <vc:view-styles from="Views/Moment/Index.css" />

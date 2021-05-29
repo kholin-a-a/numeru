@@ -18,9 +18,19 @@
             };
         }
 
+        public string Description()
+        {
+            return this._description;
+        }
+
         public string Get()
         {
             return this._description;
+        }
+
+        public string Title()
+        {
+            return "Нумерология числа судьбы";
         }
     }
 }
