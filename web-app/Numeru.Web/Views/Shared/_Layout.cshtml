@@ -31,7 +31,7 @@
         </script>
     </environment>
 
-    @RenderSection("MetaData", required: false)
+    @RenderSection("Head", required: false)
 </head>
 
 <body class="pb-3">
@@ -68,6 +68,7 @@
     </div>
 
     <script src="~/lib/bootstrap-5.0.1/js/bootstrap.min.js"></script>
-    @RenderSection("Scripts", required: false)
+
+    @RenderSection("Body", required: false)
 </body>
 </html>
