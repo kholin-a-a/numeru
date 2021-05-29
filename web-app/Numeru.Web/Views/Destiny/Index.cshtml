@@ -1,11 +1,15 @@
-﻿@model DestinyIndexViewModel;
+﻿@model DestinyIndexViewModel
+@inject IOpenGraph<DestinyView> openGraph
+@inject IMetaDescription<DestinyView> metaDescription
+
 @{
     ViewData["Title"] = "Судьба";
     ViewData["Route"] = "Destiny";
 }
 
 @section MetaData {
-    <meta name="description" content="В мире есть свои закономерности. Узнайте свое предназначение с помощью описания числа судьбы." />
+    <meta name="description" content="@metaDescription.Get()" />
+    <partial name="~/Views/Partials/_OpenGraph.cshtml" model="openGraph.Data()" />
 }
 
 <style>
@@ -13,6 +17,7 @@
         max-width: 400px;
     }
 
+    /*TO DO: */
     .prediction-text {
         text-align: justify;
     }
