@@ -108,15 +108,16 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDEVMP30YQ"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
+
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
-
             gtag('config', 'G-WDEVMP30YQ');
-
-            console.log("Run in production mode.");
         </script>
     </environment>
+
+    @RenderSection("MetaData", required: false)
 </head>
+
 <body class="pb-3">
     <header>
         <nav class="navbar mb-3 transparent-dark d-flex align-items-center justify-content-between">
