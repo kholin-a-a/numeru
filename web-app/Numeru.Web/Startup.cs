@@ -55,6 +55,7 @@ namespace Numeru.Web
             );
 
             services.AddScoped<IOpenGraph<MomentView>, MomentMetaService>();
+            services.AddScoped<IMetaDescription<MomentView>, MomentMetaService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

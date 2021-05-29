@@ -1,5 +1,6 @@
-﻿@model MomentIndexViewModel;
-@inject IOpenGraph<MomentView> openGraphService;
+﻿@model MomentIndexViewModel
+@inject IOpenGraph<MomentView> openGraph
+@inject IMetaDescription<MomentView> metaDescription
 
 @{
     ViewData["Title"] = "Момент";
@@ -7,8 +8,8 @@
 }
 
 @section MetaData {
-    <meta name="description" content="test" />
-    <partial name="~/Views/Partials/_OpenGraph.cshtml" model="openGraphService.Data()" />
+    <meta name="description" content="@metaDescription.Get()" />
+    <partial name="~/Views/Partials/_OpenGraph.cshtml" model="openGraph.Data()" />
 }
 
 <style>
