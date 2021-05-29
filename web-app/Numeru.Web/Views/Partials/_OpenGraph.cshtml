@@ -1,0 +1,20 @@
+﻿@model OpenGraphViewModel;
+
+@functions {
+    string AbsoluteUrl(string path)
+    {
+        return $"{Context.Request.Scheme}://{Context.Request.Host}/{path}";
+    }
+}
+
+<meta property="og:title" content="@Model.Title" />
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="@(AbsoluteUrl(Context.Request.Path))"/>
+
+<meta property="og:image" content="@(AbsoluteUrl("img/nebulu_663_373.jpg"))" />
+<meta property="og:image:width" content="663" />
+<meta property="og:image:height" content="373" />
+
+<meta property="og:site_name" content="Numeru" />
+
+<meta property="og:description" content="@Model.Description" />
