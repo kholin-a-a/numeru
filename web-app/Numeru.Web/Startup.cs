@@ -53,11 +53,6 @@ namespace Numeru.Web
             services.AddScoped<IDestinyRepository>(sp =>
                 new InMemoryDestinyRepository(destinies)
             );
-
-            services.AddScoped<IOpenGraph<MomentView>, MomentMetaService>();
-            services.AddScoped<IMetaDescription<MomentView>, MomentMetaService>();
-            services.AddScoped<IOpenGraph<DestinyView>, DestinyMetaService>();
-            services.AddScoped<IMetaDescription<DestinyView>, DestinyMetaService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

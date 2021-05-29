@@ -1,6 +1,4 @@
 ﻿@model MomentIndexViewModel
-@inject IOpenGraph<MomentView> openGraph
-@inject IMetaDescription<MomentView> metaDescription
 
 @{
     ViewData["Title"] = "Момент";
@@ -8,8 +6,12 @@
 }
 
 @section Head {
-    <meta name="description" content="@metaDescription.Get()" />
-    <vc:open-graph title="@openGraph.Title()" description="@openGraph.Description()" />
+    <meta name="description"
+          content="Многое зависит не от вас. Узнайте ответ на свой вопрос с помощью нумерологии момента." />
+
+    <vc:open-graph title="Нумерология момента"
+                   description="Многое зависит не от вас. Узнайте ответ на свой вопрос с помощью нумерологии момента." />
+
     <vc:view-styles from="Views/Moment/Index.css" />
 }
 

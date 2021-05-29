@@ -1,6 +1,4 @@
 ﻿@model DestinyIndexViewModel
-@inject IOpenGraph<DestinyView> openGraph
-@inject IMetaDescription<DestinyView> metaDescription
 
 @{
     ViewData["Title"] = "Судьба";
@@ -8,8 +6,12 @@
 }
 
 @section Head {
-    <meta name="description" content="@metaDescription.Get()" />
-    <vc:open-graph title="@openGraph.Title()" description="@openGraph.Description()" />
+    <meta name="description"
+          content="В мире есть свои закономерности. Узнайте свое предназначение с помощью описания числа судьбы." />
+
+    <vc:open-graph title="Нумерология числа судьбы"
+                   description="В мире есть свои закономерности. Узнайте свое предназначение с помощью описания числа судьбы." />
+
     <vc:view-styles from="Views/Destiny/Index.css" />
 }
 
