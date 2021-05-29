@@ -1,5 +1,5 @@
 $ErrorActionPreference = "Stop"
-$version = "0.0.12"
+$version = "0.0.13"
 
 docker build -t kholinaa/numeru-web:$version .
 docker tag kholinaa/numeru-web:$version kholinaa/numeru-web:latest
