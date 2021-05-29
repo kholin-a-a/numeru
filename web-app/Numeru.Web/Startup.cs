@@ -75,7 +75,7 @@ namespace Numeru.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Moment}/{action=Index}");
+                    pattern: "{controller=Home}/{action=Index}");
             });
         }
     }
