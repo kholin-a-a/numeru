@@ -1,6 +1,6 @@
 ﻿namespace Numeru.Web
 {
-    internal interface IOpenGraph<TView>
+    public interface IOpenGraph<TView>
     {
         OpenGraphViewModel Data();
     }
