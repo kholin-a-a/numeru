@@ -8,19 +8,22 @@ namespace Numeru.Web.Controllers
     {
         private readonly INumberService _number;
         private readonly IEvaluationAlgorithm<DateTime> _algorithm;
+        private readonly IDateTimeProvider _dateTime;
 
         public MomentController(
             INumberService numberService,
-            IEvaluationAlgorithm<DateTime> algorithm
+            IEvaluationAlgorithm<DateTime> algorithm,
+            IDateTimeProvider dateTime
         )
         {
             this._number = numberService;
             this._algorithm = algorithm;
+            this._dateTime = dateTime;
         }
 
         public ActionResult Index()
         {
-            var date = DateTime.Now;
+            var date = this._dateTime.Now();
 
             var number = this._algorithm.Execute(date);
 

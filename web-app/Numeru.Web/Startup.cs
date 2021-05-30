@@ -61,6 +61,8 @@ namespace Numeru.Web
                 minifyCss: !this._env.IsDevelopment(),
                 minifyJavaScript: !this._env.IsDevelopment()
                 );
+
+            services.AddScoped<IDateTimeProvider, MoscowDateTimeProvider>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
