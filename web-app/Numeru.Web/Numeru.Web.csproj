@@ -27,11 +27,21 @@
     <ProjectReference Include="..\Numeru.Services\Numeru.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+
   <Target Name="CopyContent" BeforeTargets="BeforeBuild">
     <ItemGroup>
       <ContentFolder Include=".\Content\**" />
     </ItemGroup>
     
+    <ItemGroup>
+      <ViewStyles Include=".\Views\**\*.css" />
+    </ItemGroup>
+    
     <Copy SourceFiles="@(ContentFolder)" DestinationFolder=".\wwwroot\%(RecursiveDir)" SkipUnchangedFiles="true"></Copy>
+
+    <Copy SourceFiles="@(ViewStyles)" DestinationFolder=".\wwwroot\css" SkipUnchangedFiles="true"></Copy>
   </Target>
 </Project>
