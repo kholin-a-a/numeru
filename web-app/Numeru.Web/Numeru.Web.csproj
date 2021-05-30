@@ -39,9 +39,13 @@
     <ItemGroup>
       <ViewStyles Include=".\Views\**\*.css" />
     </ItemGroup>
+
+    <ItemGroup>
+      <ViewScript Include=".\Views\**\*.js" />
+    </ItemGroup>
     
     <Copy SourceFiles="@(ContentFolder)" DestinationFolder=".\wwwroot\%(RecursiveDir)" SkipUnchangedFiles="true"></Copy>
-
     <Copy SourceFiles="@(ViewStyles)" DestinationFolder=".\wwwroot\css" SkipUnchangedFiles="true"></Copy>
+    <Copy SourceFiles="@(ViewScript)" DestinationFolder=".\wwwroot\js" SkipUnchangedFiles="true"></Copy>
   </Target>
 </Project>
