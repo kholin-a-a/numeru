@@ -53,6 +53,8 @@ namespace Numeru.Web
             services.AddScoped<IDestinyRepository>(sp =>
                 new InMemoryDestinyRepository(destinies)
             );
+
+            services.AddWebOptimizer();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -61,7 +63,8 @@ namespace Numeru.Web
             {
                 app.UseDeveloperExceptionPage();
             }
-            
+
+            app.UseWebOptimizer();
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
