@@ -27,7 +27,7 @@ namespace Numeru.Web.Controllers
 
             var number = this._algorithm.Execute(date);
 
-            var vm = new MomentIndexViewModel
+            var vm = new MomentViewModel
             {
                 Number = number,
                 Date = date,

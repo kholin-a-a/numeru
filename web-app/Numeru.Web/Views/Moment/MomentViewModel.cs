@@ -2,7 +2,7 @@
 
 namespace Numeru.Web
 {
-    public class MomentIndexViewModel
+    public class MomentViewModel
     {
         public int Number { get; set; }
 

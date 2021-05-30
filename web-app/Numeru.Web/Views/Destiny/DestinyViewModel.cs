@@ -6,9 +6,9 @@ using System.Text.RegularExpressions;
 
 namespace Numeru.Web
 {
-    public class DestinyIndexViewModel: IValidatableObject
+    public class DestinyViewModel: IValidatableObject
     {
-        public DestinyIndexViewModel()
+        public DestinyViewModel()
         {
             this.BirthDate = new DateTime(1970, 1, 1);
         }

@@ -21,12 +21,12 @@ namespace Numeru.Web.Controllers
         public ActionResult Index()
         {
             return View(
-                new DestinyIndexViewModel()
+                new DestinyViewModel()
                 );
         }
 
         [HttpPost]
-        public ActionResult Index(DestinyIndexViewModel vm)
+        public ActionResult Index(DestinyViewModel vm)
         {
             if (!ModelState.IsValid)
             {
