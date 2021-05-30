@@ -14,12 +14,15 @@ namespace Numeru.Web
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
+            this._env = env;
         }
 
         public IConfiguration Configuration { get; }
+
+        private readonly IWebHostEnvironment _env;
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -54,7 +57,10 @@ namespace Numeru.Web
                 new InMemoryDestinyRepository(destinies)
             );
 
-            services.AddWebOptimizer();
+            services.AddWebOptimizer(
+                minifyCss: !this._env.IsDevelopment(),
+                minifyJavaScript: !this._env.IsDevelopment()
+                );
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
