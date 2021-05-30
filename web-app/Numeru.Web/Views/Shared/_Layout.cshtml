@@ -1,16 +1,4 @@
-﻿@functions {
-    string ActiveWhen(string route)
-    {
-        if ((string)ViewData["Route"] == route)
-        {
-            return "active";
-        }
-
-        return "";
-    }
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
     <title>Numeru | @ViewData["Title"]</title>
@@ -42,11 +30,11 @@
 
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link @ActiveWhen("Moment")" asp-controller="Moment" asp-action="Index">Момент</a>
+                    <a class="nav-link" route-name="Moment" asp-controller="Moment" asp-action="Index">Момент</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link @ActiveWhen("Destiny")" asp-controller="Destiny" asp-action="Index">Судьба</a>
+                    <a class="nav-link" route-name="Destiny" asp-controller="Destiny" asp-action="Index">Судьба</a>
                 </li>
             </ul>
 
